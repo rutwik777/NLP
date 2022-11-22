@@ -30,5 +30,41 @@ Bag of words is usually combined with techniques of Lemmatisation or stemming af
 from the sentences to get final vector representation. The downside of this technique is that it does not take into 
 regard into order or structure which could reveal more meaningful information about the sentences.  
 
+## 1.3 Stemming  
 
+Words in any language originate from a main word, these are referred as Stem words and derivative words 
+branch out of this stem. These branched words mean the same but have different forms depending upon the 
+grammar of the sentences. Now we want these branched words to be reduced to their corresponding stem words.
+Stemming in Natural Language Processing does exactly this, reduces words to their stem words. For example,
+let’s consider the word ‘stem’ itself. This can take forms such as ‘stemming’ or ‘stemmed’. So, the words 
+‘stemming’ or ‘stemmed’ have to be reduced to ‘stem’.  
+
+## 1.4 Lemmatization  
+
+Lemmatization is very similar to stemming. It also reduces the words to their root stem, but there is a catch.
+Stemming usually reduces words to a form where they lose their meaning. Lemmatization overcomes this by 
+keeping this to the minimum. However, this technique sometimes can lead to some same stem words not to be 
+detected efficiently. But it works well compared to stemming from a word understanding point of view. This is 
+evident from the above figure. The word ‘Histori’ does not ring a bell instantly. After lemmatisation the word 
+‘historical’ is kept as it is. This helps in creating a more meaningful corpus, thus is very useful, since the parts 
+of speech are preserved. Lemmatization’s limitations are overcome by word to vector embedding.  
+
+## 1.5 Word to Vector and Word Embedding  
+
+As we have seen what Bag of Words, Stemming and Lemmatization do and how they work an important 
+drawback is observed, i.e., they don’t preserve semantic information. What this means is that the relationship 
+between the words is not known. Let’s take a simple example, suppose we have three words ‘man’, ‘woman’ 
+and ‘play’. Immediately we human can perceive that ‘man’ and ‘woman’ are almost similar in the sense both 
+refer to human but different genders that all. Now we need to make computers understand this. This is where the 
+word to vector comes.  
+
+In this model each word is represented as vector of multiple dimensions (32 or more). This vector representation 
+is called word embedding and depends on what kind of model we are using (such as Word2vec, GloVe or BERT 
+embeddings). Thus, semantic information is preserved in this way. Also, computers can build a graph internally 
+which can be used to traverse to understanding semantics. Let’s outline the steps to create a word to vector 
+representation:
+  1. Tokenize the sentences to convert them into word tokens
+  2. Create a histogram of the tokens obtained
+  3. Then create a matrix of all the unique tokens and represent the occurrence and relationship between the
+words and nearby words that lead to it by cosine similarity
 
